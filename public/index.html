@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Care Alert - Authentication</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+  <!-- Top Navigation / Settings Bar -->
+  <header class="top-bar">
+    <button id="settingsBtn" class="icon-btn" title="Settings">
+      <i class="fa-solid fa-gear"></i>
+    </button>
+  </header>
+
+  <!-- Settings Dropdown Modal -->
+  <div id="settingsModal" class="settings-modal hidden">
+    <div class="settings-group">
+      <label id="langLabel" for="languageSelect"><i class="fa-solid fa-language"></i> Language</label>
+      <select id="languageSelect">
+        <option value="eng">English</option>
+        <option value="amh">አማርኛ (Amharic)</option>
+        <option value="afan">Afaan Oromoo</option>
+        <option value="tig">ትግርኛ (Tigrinya)</option>
+      </select>
+    </div>
+    
+    <div class="settings-group">
+      <label id="themeLabel"><i class="fa-solid fa-circle-half-stroke"></i> Theme</label>
+      <button id="themeToggleBtn" class="theme-btn">Switch to Dark Mode</button>
+    </div>
+  </div>
+
+  <!-- Main Auth Card Container -->
+  <main class="auth-container">
+    <div class="auth-card">
+      
+      <!-- Logo and Title Header -->
+      <div class="brand-header">
+        <div class="logo-wrapper">
+          <span class="brain-icon">🧠</span>
+          <span class="sparkle-icon">✨</span>
+        </div>
+        <h1 id="formTitle">Welcome Back</h1>
+      </div>
+
+      <!-- Log In Form -->
+      <form id="loginForm" class="auth-form">
+        <div class="input-group">
+          <label id="emailLabelLogin" for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label id="passwordLabelLogin" for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••••••" required>
+        </div>
+
+        <button type="submit" id="loginBtn" class="primary-btn">Log In</button>
+
+        <p class="toggle-text">
+          <span id="noAccountText">New here?</span> 
+          <a href="#" id="showSignupLink">Create an account</a>
+        </p>
+      </form>
+
+      <!-- Create Account Form (Initially Hidden) -->
+      <form id="signupForm" class="auth-form hidden">
+        <div class="input-group">
+          <label id="nameLabel" for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-group">
+          <label id="ageLabel" for="signupAge">Age</label>
+          <input type="number" id="signupAge" min="1" max="120" placeholder="e.g. 25" required>
+        </div>
+
+        <div class="input-group">
+          <label id="categoryLabel" for="signupCategory">I am a:</label>
+          <select id="signupCategory" required>
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label id="emailLabelSignup" for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label id="passwordLabelSignup" for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="••••••••••••" required>
+        </div>
+
+        <button type="submit" id="signupBtn" class="primary-btn">Create Account</button>
+
+        <p class="toggle-text">
+          <span id="hasAccountText">Already have an account?</span> 
+          <a href="#" id="showLoginLink">Log In</a>
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

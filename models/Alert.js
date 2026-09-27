@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const AlertSchema = new mongoose.Schema({
+const alertSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
-    trim: true
+    required: true
   },
   description: {
     type: String,
@@ -12,12 +11,12 @@ const AlertSchema = new mongoose.Schema({
   },
   severity: {
     type: String,
-    enum: ['low', 'medium', 'high', 'critical'],
+    enum: ['low', 'medium', 'high'],
     default: 'medium'
   },
   location: {
     type: String,
-    default: 'Unspecified'
+    required: true
   },
   status: {
     type: String,
@@ -30,4 +29,4 @@ const AlertSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Alert', AlertSchema);
+module.exports = mongoose.model('Alert', alertSchema);

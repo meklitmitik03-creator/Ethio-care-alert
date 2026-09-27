@@ -1,0 +1,208 @@
+:root {
+  --bg-light: #cbe3fc;
+  --card-bg-light: #ffffff;
+  --text-light: #333333;
+  --input-bg-light: #edf2f7;
+  --input-border-light: #e2e8f0;
+  
+  --bg-dark: #1a202c;
+  --card-bg-dark: #2d3748;
+  --text-dark: #f7fafc;
+  --input-bg-dark: #4a5568;
+  --input-border-dark: #718096;
+
+  --primary-color: #4880ec;
+  --primary-hover: #356ac3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body.light-theme {
+  background-color: var(--bg-light);
+  background-image: 
+    linear-gradient(rgba(203, 227, 252, 0.8), rgba(203, 227, 252, 0.8)),
+    url('https://thumbs.dreamstime.com/b/silhouette-man-giving-helping-hand-to-another-man-who-fell-to-ground-silhouette-man-giving-helping-hand-to-116865617.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(rgba(26, 32, 44, 0.88), rgba(26, 32, 44, 0.88)),
+    url('https://thumbs.dreamstime.com/b/silhouette-man-giving-helping-hand-to-another-man-who-fell-to-ground-silhouette-man-giving-helping-hand-to-116865617.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-dark);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  position: relative;
+}
+
+.icon-btn {
+  background: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  color: #4a5568;
+}
+
+.settings-modal {
+  position: absolute;
+  top: 65px;
+  right: 20px;
+  width: 240px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body.light-theme .settings-modal { background: var(--card-bg-light); }
+body.dark-theme .settings-modal { background: var(--card-bg-dark); }
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.settings-group label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.settings-group select, .theme-btn {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+body.light-theme .auth-card { background: var(--card-bg-light); }
+body.dark-theme .auth-card { background: var(--card-bg-dark); }
+
+.brand-header {
+  margin-bottom: 25px;
+}
+
+.logo-wrapper {
+  font-size: 36px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.brand-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #718096;
+}
+
+body.dark-theme .input-group label { color: #a0aec0; }
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+body.light-theme .input-group input, body.light-theme .input-group select {
+  background-color: var(--input-bg-light);
+  border: 1px solid var(--input-border-light);
+  color: var(--text-light);
+}
+
+body.dark-theme .input-group input, body.dark-theme .input-group select {
+  background-color: var(--input-bg-dark);
+  border: 1px solid var(--input-border-dark);
+  color: var(--text-dark);
+}
+
+.primary-btn {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.toggle-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #718096;
+}
+
+.toggle-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none !important;
+}
